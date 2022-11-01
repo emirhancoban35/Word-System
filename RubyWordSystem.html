@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<title>Ruby Word System</title>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<link rel="shortcut icon" type="image/png" href="images/logo.png" />
+<body>
+    <div class="logo">
+        <img src="images/RubyLogo.png" width="70" height="100" />
+    </div>
+    <form method="post" action="">
+        <div id="demo-outer">
+            <div id="header">
+                <div class="float-left">&nbsp;</div>
+                <div class="float-left col-heading">Enter Title</div>
+                <div class="float-left col-heading">Enter Text</div>
+                <div class="float-left col-heading">Upload Image</div>
+            </div>
+            <div id="input-body">
+                <div class="item-name float-clear allinputs" style="clear:both;">
+                    <div class="float-left"><input type="checkbox" name="item_index[]" /></div>
+                    <div class="float-left"><input type="text" class="title" name="item_title[]" /></div>
+                    <div class="float-left"><input type="text" class="text" name="item_title[]" /></div>
+                    <div class="float-left"><input type="file" id="image-input0" name="image[]"
+                            accept="image/png, image/gif, image/jpeg" /></div>
+                </div>
+            </div>
+            <div class="btn-action float-clear">
+                <input type="button" name="add_item" value="Duplicate" onClick="addRow();" />
+                <input type="button" name="del_item" value="Delete" onClick="deleteRow();" />
+            </div>
+        </div>
+        <div></div>
+    </form>
+    <button class="button" onclick="convertToWord('newword')">Convert To Word</button>
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
