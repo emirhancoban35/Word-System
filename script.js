@@ -23,9 +23,8 @@ function imageInputs(imageSrc) {
         imageArray.push("<br>")
     }
     else {
-        imageArray.push("<img src=\"" + imageSrc + "\" width=\"600\" height=\"400\" alt=\"\">");
+        imageArray.push("<img src=\"" + imageSrc + "\" width=\"600\" height=\"400\">");
     }
-    console.log(imageArray)
     return imageArray
 }
 
