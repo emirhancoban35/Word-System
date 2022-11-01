@@ -43,7 +43,7 @@ function createInputs() {
     return inputArray;
 };
 
-async function convertToWord(documentName = '') {
+async function createWord(documentName = '') {
     var htmlTop = "<html><head><meta charset='utf-8'>";
     var htmlStyle = "<style></style>";
     var htmlBody = "</head><body>";
@@ -63,17 +63,22 @@ async function convertToWord(documentName = '') {
             var allInputs = createInputs();
             combineHtml += allInputs + htmlBottom;
             var documentName = documentName ? documentName + ".doc" : "word.doc";
-            var urlAddress = "data:application/vnd.ms-word;charset=utf-8," + encodeURIComponent(combineHtml);
-            var downloadLink = document.createElement("a");
             inputArray = [];
             imageArray = [];
-            downloadLink.href = urlAddress;
-            downloadLink.download = documentName;
-            downloadLink.click();
-            document.body.appendChild(downloadLink);
-            document.body.removeChild(downloadLink);
+            downloadWord(combineHtml , documentName)
         }
     }
+}
+
+function downloadWord(combineHtml , documentName){
+    var urlAddress = "data:application/vnd.ms-word;charset=utf-8," + encodeURIComponent(combineHtml);
+    var downloadLink = document.createElement("a");
+    downloadLink.href = urlAddress;
+    downloadLink.download = documentName;
+    downloadLink.click();
+    document.body.appendChild(downloadLink);
+    document.body.removeChild(downloadLink);
+
 }
 
 
