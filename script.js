@@ -78,7 +78,6 @@ function downloadWord(combineHtml , documentName){
     downloadLink.click();
     document.body.appendChild(downloadLink);
     document.body.removeChild(downloadLink);
-
 }
 
 
@@ -95,5 +94,4 @@ function convertImageToBase64(inputId) {
             reader.readAsDataURL(image[0])
         })
     }
-
 }
